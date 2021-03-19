@@ -1,4 +1,5 @@
-# xtt
+# XTT - XTblock Token
+
 bXTT - BEP20 XTblock Token
 
 eXTT - ERC20 XTblock Token
