@@ -349,7 +349,7 @@ contract BEP20Token is Context, IBEP20, Ownable {
   string private _name;
 
   constructor() public {
-    _name = "BEP20 - XTT Token";
+    _name = "BEP20 - XTblock Token";
     _symbol = "bXTT";
     _decimals = 18;
     _totalSupply = 50000000000000000000000000; //50mil
