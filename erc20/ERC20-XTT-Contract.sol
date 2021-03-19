@@ -434,7 +434,7 @@ pragma solidity 0.8.1;
 	    string constant public symbolString = "XTT";
         string constant public nameString = "XTblock Token";
 
-        uint256 INITIAL_SUPPLY = 500000000;
+        uint256 INITIAL_SUPPLY = 450000000;
     
        
 	    constructor() ERC20(nameString, symbolString) {
