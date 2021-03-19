@@ -1,2 +1,1 @@
-BEP20 XTT Smart Contract
-Token Ticker: bXTT
+bXTT - XTblock Token - BEP20 Smart Contract
