@@ -431,7 +431,7 @@ pragma solidity 0.8.1;
 	
 	contract XTblockToken is ERC20Burnable {
 	    
-	    string constant public symbolString = "eXTT";
+	    string constant public symbolString = "XTT-e20";
         string constant public nameString = "ERC20 XTblock Token";
 
         uint256 INITIAL_SUPPLY = 350000000;
