@@ -313,16 +313,18 @@ contract Ownable is Context {
    * NOTE: Renouncing ownership will leave the contract without an owner,
    * thereby removing any functionality that is only available to the owner.
    */
-  function renounceOwnership() external onlyOwner {
+   
+   /*
+  function renounceOwnership() public onlyOwner {
     emit OwnershipTransferred(_owner, address(0));
     _owner = address(0);
-  }
+  }*/
 
   /**
    * @dev Transfers ownership of the contract to a new account (`newOwner`).
    * Can only be called by the current owner.
    */
-  function transferOwnership(address newOwner) external onlyOwner {
+  function transferOwnership(address newOwner) public onlyOwner {
     _transferOwnership(newOwner);
   }
 
@@ -462,7 +464,7 @@ contract BEP20Token is Context, IBEP20, Ownable {
    *
    * - `spender` cannot be the zero address.
    */
-  function increaseAllowance(address spender, uint256 addedValue) external returns (bool) {
+  function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
     _approve(_msgSender(), spender, _allowances[_msgSender()][spender].add(addedValue));
     return true;
   }
@@ -481,7 +483,7 @@ contract BEP20Token is Context, IBEP20, Ownable {
    * - `spender` must have allowance for the caller of at least
    * `subtractedValue`.
    */
-  function decreaseAllowance(address spender, uint256 subtractedValue) external returns (bool) {
+  function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
     _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "BEP20: decreased allowance below zero"));
     return true;
   }
@@ -494,10 +496,12 @@ contract BEP20Token is Context, IBEP20, Ownable {
    *
    * - `msg.sender` must be the token owner
    */
-  function mint(uint256 amount) external onlyOwner returns (bool) {
+   /*
+  function mint(uint256 amount) public onlyOwner returns (bool) {
     _mint(_msgSender(), amount);
     return true;
   }
+  */
 
   /**
    * @dev Moves tokens `amount` from `sender` to `recipient`.
@@ -531,13 +535,15 @@ contract BEP20Token is Context, IBEP20, Ownable {
    *
    * - `to` cannot be the zero address.
    */
+   
+   /*
   function _mint(address account, uint256 amount) internal {
     require(account != address(0), "BEP20: mint to the zero address");
 
     _totalSupply = _totalSupply.add(amount);
     _balances[account] = _balances[account].add(amount);
     emit Transfer(address(0), account, amount);
-  }
+  }*/
 
   /**
    * @dev Destroys `amount` tokens from `account`, reducing the
