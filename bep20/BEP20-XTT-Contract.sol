@@ -350,9 +350,9 @@ contract BEP20Token is Context, IBEP20, Ownable {
 
   constructor() public {
     _name = "BEP20 - XTblock Token";
-    _symbol = "bXTT";
+    _symbol = "XTT-b20";
     _decimals = 18;
-    _totalSupply = 50000000000000000000000000; //50mil
+    _totalSupply = 350000000000000000000000000; //350mil
     _balances[msg.sender] = _totalSupply;
 
     emit Transfer(address(0), msg.sender, _totalSupply);
