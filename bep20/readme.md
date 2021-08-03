@@ -1,1 +1,1 @@
-bXTT - XTblock Token - BEP20 Smart Contract
+XTT-b20: XTblock Token - BEP20 Smart Contract
