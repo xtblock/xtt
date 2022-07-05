@@ -359,10 +359,10 @@ pragma solidity 0.8.1;
 	
 	        uint256 accountBalance = _balances[account];
 	        require(accountBalance >= amount, "ERC20: burn amount exceeds balance");
-			unchecked {
-				_balances[account] = accountBalance - amount;
-				_totalSupply -= amount;
-			}
+	        unchecked {
+	            _balances[account] = accountBalance - amount;
+	            _totalSupply -= amount;
+	        }
 	        
 	        emit Transfer(account, address(0), amount);
 	    }
