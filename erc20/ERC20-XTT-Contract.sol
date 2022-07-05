@@ -241,10 +241,10 @@ pragma solidity 0.8.1;
 	        _transfer(sender, recipient, amount);
 	
 	        uint256 currentAllowance = _allowances[sender][_msgSender()];
-            require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");
-            unchecked {
-                _approve(sender, _msgSender(), currentAllowance - amount);
-            }
+	        require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");
+	        unchecked {
+	            _approve(sender, _msgSender(), currentAllowance - amount);
+	        }
 
 	        return true;
 	    }
@@ -283,9 +283,9 @@ pragma solidity 0.8.1;
 	    function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
 	        uint256 currentAllowance = _allowances[_msgSender()][spender];
 	        require(currentAllowance >= subtractedValue, "ERC20: decreased allowance below zero");
-            unchecked {
-                _approve(_msgSender(), spender, currentAllowance - subtractedValue);
-            }
+	        unchecked {
+	            _approve(_msgSender(), spender, currentAllowance - subtractedValue);
+	        }
 
 	        return true;
 	    }
@@ -312,10 +312,10 @@ pragma solidity 0.8.1;
 	
 	        uint256 senderBalance = _balances[sender];
 	        require(senderBalance >= amount, "ERC20: transfer amount exceeds balance");
-			unchecked {
-				_balances[sender] = senderBalance - amount;
-                _balances[recipient] += amount;	
-			}
+	        unchecked {
+	            _balances[sender] = senderBalance - amount;
+	            _balances[recipient] += amount;	
+	        }
 	
 	        emit Transfer(sender, recipient, amount);
 	    }
@@ -335,9 +335,9 @@ pragma solidity 0.8.1;
 	        _beforeTokenTransfer(address(0), account, amount);
 	
 	        _totalSupply += amount;
-			unchecked {
-				_balances[account] += amount;
-			}
+	        unchecked {
+	            _balances[account] += amount;
+	        }
 	        emit Transfer(address(0), account, amount);
 	    }
 	
@@ -434,9 +434,9 @@ pragma solidity 0.8.1;
 	    function burnFrom(address account, uint256 amount) public virtual {
 	        uint256 currentAllowance = allowance(account, _msgSender());
 	        require(currentAllowance >= amount, "ERC20: burn amount exceeds allowance");
-			unchecked {
-				_approve(account, _msgSender(), currentAllowance - amount);
-			}
+	        unchecked {
+	            _approve(account, _msgSender(), currentAllowance - amount);
+	        }
 	        _burn(account, amount);
 	    }
 	}
